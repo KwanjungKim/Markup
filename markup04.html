@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * { margin: 0; padding: 0;}
+    header {float: left; position: sticky; top: 0; width: 100%; height: 100px; background-color: rgba(255,255,255,.5); z-index: 1;}
+    header ul {height: 100px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #333;}
+    header ul li {list-style-type: none; margin: 0 20px;}
+    header ul li div {display: block; width: 30px; height: 30px; background-color: #333; border-radius: 50%;}
+
+    main .page01 {height: 100vh; background: url(image/bg-markup04.jpg) no-repeat 100%; position: relative;}
+    main .page01 .page-wrap {position: absolute; top: 55%; left: 60%; transform: translate(-50%,-50%); height: 20vh;}
+    main .page01 .page-wrap .text-box .p1 {margin-left: 200px; font-size: 3rem; font-weight: bold; color: #000; text-transform: uppercase;}
+    main .page01 .page-wrap .text-box .p2 {margin-left: 120px; font-size: 1.5rem; font-weight: bold; color: #000; }
+    main .page01 .page-wrap .text-box div {width: 5vw; height: 5px; background-color: #000; margin: 10px 0 0 160px;}
+    main .page01 .btn {position: absolute; top: 50%; transform: translateY(-50%);}
+    main .page01 .btn-left {left: 0; margin-left: 30px;}
+    main .page01 .btn-right {right: 0; margin-right: 30px;}
+    main .page01 .icon-box {position: fixed; bottom: 50px; right: 30px; display: flex;}
+    main .page01 .icon-box .icon {width: 50px; height: 50px; background-color: rgba(255,255,255,.5); margin-right: 30px; text-align: center; line-height: 50px; text-transform: uppercase; font-size: 10px; border: 1px solid #333;}
+
+    main .page02 {height: 100vh; position: relative;}
+    main .page02 .bg{position: absolute; left: 0; bottom: 0; height: 50vh; width: 100%; background-color: #000; z-index: -1;}
+    main .page02 .page-wrap {margin: 0 auto;}
+    main .page02 .page-wrap p{text-align: center;}
+    main .page02 .page-wrap .title {font-size: 3rem; text-transform: uppercase; color: #333; padding-top: 150px;}
+    main .page02 .page-wrap .sub-title {font-size: 2rem; text-transform: uppercase; color: #333; margin-top: 30px;}
+    main .page02 .page-wrap .box-wrap {position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); display: flex; justify-content: center;} 
+    main .page02 .page-wrap .box-wrap div {width: 200px; height: 200px; background-color: #fff; margin: 0 50px; box-shadow: 5px 5px 5px rgba(0,0,0,.2);} 
+  </style>
+</head>
+<body>
+  <header>
+    <ul>
+      <li><div></div></li>
+      <li><div></div></li>
+      <li><div></div></li>
+      <li><div></div></li>
+      <li><div></div></li>
+    </ul>
+  </header>
+  <main>
+    <section class="page01">
+      <div class="page-wrap">
+        <div class="text-box">
+          <p class="p1">007</p>
+          <div></div>
+          <p class="p2">James Bond</p>
+        </div>
+      </div>
+      <div class="btn btn-left">
+        <a>
+          <img src="image/btn_prv.png" alt="">
+        </a>
+      </div>
+      <div class="btn btn-right">
+        <a>
+          <img src="image/btn_next.png" alt="">
+        </a>
+      </div>
+      <div class="icon-box">
+        <div class="icon icon01">home</div>
+        <div class="icon icon02">search</div>
+        <div class="icon icon03">top</div>
+      </div>
+    </section>
+    <section class="page02">
+      <div class="bg"></div>
+      <div class="page-wrap">
+        <p class="title">title</p>
+        <p class="sub-title">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+        <div class="box-wrap">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

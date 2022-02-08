@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0;}
+    body {background-color: salmon;}
+    .header-wrap {width: calc(100vw-20px); height: 10vh; background-color: #fff; display: flex; justify-content: space-between; padding: 0 2vw;}
+    .header-wrap .logo {font-size: 2em; font-weight: 500; text-align: center; line-height: 10vh;}
+    .header-wrap nav ul {width:45vh; height: 10vh; display: flex; justify-content: space-around; align-items: center; margin-right: 5vw;}
+    .header-wrap nav ul li {list-style: none;}
+    .content-wrap {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 60vw; height: 30vh; display: flex; justify-content: space-between;}
+    .content-wrap .thumb{width: 30vh; height: 30vh; background-color: #fff; cursor: pointer;}
+    .box {content: '';position: absolute; left: 0; top: 0; width: 100vw; height: 100vh; background-color: #333; opacity: 0.4;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-wrap">
+      <div class="logo"> 아무튼로고임 </div>
+      <nav>
+        <ul>
+          <li>첫번째</li>
+          <li>두번째</li>
+          <li>세번째</li>
+          <li>네번째</li>
+          <li>다섯번째</li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="content-wrap">
+      <div class="thumb thumb01"></div>
+      <div class="thumb thumb02"></div>
+      <div class="thumb thumb03"></div>
+    </div>
+  </main>
+  <div class=""></div>
+
+  <script>
+    const thumb = document.querySelector(".content-wrap div");
+    console.log(thumb);
+  </script>
+</body>
+</html>
