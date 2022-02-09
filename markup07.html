@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* resetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetreset */
+    
+    /* position */
+    .position-relative {position: relative;}
+    .position-absolute {position: absolute;}
+    .position-fixed {position: fixed;}
+    
+    /* transform */
+    .translateX-50 {transform: translateX(-50%);}
+    .translate-50 {transform: translate(-50%,-50%);}
+    
+    /* display */
+    .display-b {display: block;}
+    .display-f {display: flex;}
+    .justify-space-between {justify-content: space-between;}
+    .justify-center {justify-content: center;}
+    .justify-space-around {justify-content:space-around;}
+    .flex-direction-column {flex-direction: column;}
+    .flex-direction-row-reverse {flex-direction: row-reverse;}
+    .align-items-center {align-items: center;}
+    
+    /* writing-mode */
+    .vertical-rl {writing-mode: vertical-rl;}
+    .vertical-lr {writing-mode: vertical-lr;}
+
+    /* font */
+    .font-size-1rem {font-size: 1rem;}
+    .font-size-2rem {font-size: 2rem;}
+    .font-size-10 {font-size: 10px;}
+    .font-size-14 {font-size: 14px;}
+    .font-size-16 {font-size: 16px;}
+    .font-size-18 {font-size: 18px;}
+    .font-size-20 {font-size: 20px;}
+    .font-size-24 {font-size: 24px;}
+    .font-size-36 {font-size: 36px;}
+    .font-size-48 {font-size: 48px;}
+    .font-size-200 {font-size: 200px;}
+    
+    .font-weight-300 {font-weight: 300;}
+    .font-weight-500 {font-weight: 500;}
+    .font-weight-700 {font-weight: 700;}
+    
+    .line-height-13 {line-height: 1.3;}
+    
+    /*font-color */
+    .color-333 {color: #333;}
+    .color-444 {color: #444;}
+    .color-48 {color: #484848;}
+    .color-4d {color: #4d4d4d;}
+    .color-76 {color: #767676;}
+    .color-96 {color: #969696;}
+    .color-999 {color:#999;}
+    .color-fff {color: #ffffff;}
+    
+    /* others */
+    .text-align-center {text-align: center;}
+    .text-align-left {text-align: left;}
+    .text-align-right {text-align: right;}
+    .text-align-justify {text-align: justify;}
+    .text-indent-9999 {text-indent: -9999em;}
+    .z-index-down1 {z-index: -1;}
+    
+    /* resetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetreset */
+
+
+  * { margin: 0; padding: 0;}
+  body { 
+    width: 100vw;
+    height: 100vh;
+    background-color: #999;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+  }
+  .main-wrap {
+    width: 40vw;
+    height: 45vh;
+  }
+  .main-wrap .main-left {
+    width: calc(40vw / 3);
+    margin-right: 2vw;
+  }
+  .main-wrap .main-right {
+    width: calc(80vw / 3);
+    padding-left: 3vw;
+    border-left: 3px solid #fff;
+  }
+  .main-wrap .main-right h1 {
+    color: #333;
+  }
+  .main-wrap .hidden {
+    right: 0;
+    z-index: -1;
+    margin-bottom: 2vw;
+  }
+  </style>
+</head>
+<body id="bg" class="display-f justify-center align-items-center">
+  <div class="main-wrap display-f align-items-center position-relative">
+    <div class="main-left">
+      <p class="text-left color-444 font-size-1rem">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Reiciendis aperiam atque deserunt iure error eaque molestiae aliquam minima animi, 
+        similique suscipit, nemo sequi consequuntur? Iste ullam quam dolorum aut porro?</p>
+    </div>
+    <div id="h1-container" class="main-right font-size-2rem">
+      <h1 id="clicker">I AM</h1>
+      <h1>A</h1>
+      <h1>TIGER</h1>
+      <h1>WITH WINGS</h1>
+    </div>
+    <div class="hidden font-size-2rem color-999 text-align-right position-absolute">
+      <h2>ACTUALLY</h1>
+      <h2>I CAN'T</h1>
+      <h2>FLY</h1>
+      <h2>IN THE SKY</h1>
+    </div>
+  </div>
+
+
+  <script>
+    const h1Element = document.getElementsByTagName('h1');
+    const h1Container = document.querySelector('#h1-container');
+    const bg = document.querySelector('#bg');
+
+    let value = 51 ;    //rgb(51,51,51)= #333 
+    let value2 = 153 ;  //rgb(153,153,153)= #999
+
+    h1Container.addEventListener('click', function() {
+      value = value + 10;
+      value2 = value2 + 10;
+      let rgb = "rgb(" + value+","+value+","+value+")";
+      let rgb2 = "rgb(" + value2+","+value2+","+value2+")";
+      for(let i = 0; i < h1Element.length; i++) {
+        h1Element[i].style.color = rgb;
+        bg.style.backgroundColor = rgb2;
+      }
+    });  
+    
+    
+    // const clicker = document.querySelector('#clicker');
+    // console.log(h1Container);
+    // console.log(h1Element);
+    // const bg = document.querySelector('#bg');
+
+    //RGB값을 통한 상수 설정
+
+    // let value = 51 ;    //rgb(51,51,51)= #333 
+    // let value2 = 153 ;  //rgb(153,153,153)= #999
+
+
+    // clicker.addEventListener('click',function(){
+    //   value = value + 10;
+    //   value2 = value2 + 10;
+    // var rgb = "rgb(" + value+","+value+","+value+")";
+    // var rgb2 = "rgb(" + value2+","+value2+","+value2+")";
+    //   clicker.style.color = rgb;
+    //   bg.style.backgroundColor = rgb2;
+    //   console.log(bg.style.backgroundColor);
+    // })
+
+
+
+
+    //헥스컬러값을 이용한 상수 설정 - console.dir(h1.style)에서 헥스컬러값적용이 안됨.
+
+    // const c = hexColor.substring(1)      // 색상 앞의 # 제거
+    // const rgb = parseInt(c, 16)   // rrggbb를 10진수로 변환
+    // const r = (rgb >> 16) & 0xff  // red 추출
+    // const g = (rgb >>  8) & 0xff  // green 추출
+    // const b = (rgb >>  0) & 0xff  // blue 추출
+  </script>
+</body>
+
+</html>
