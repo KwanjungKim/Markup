@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* resetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetreset */
+
+    /* position */
+    .position-relative {position: relative;}
+    .position-absolute {position: absolute;}
+    .position-fixed {position: fixed;}
+
+    /* transform */
+    .translateX-50 {transform: translateX(-50%);}
+    .translate-50 {transform: translate(-50%,-50%);}
+
+    /* display */
+    .display-b {display: block;}
+    .display-f {display: flex;}
+    .justify-space-between {justify-content: space-between;}
+    .justify-center {justify-content: center;}
+    .justify-space-around {justify-content:space-around;}
+    .flex-direction-column {flex-direction: column;}
+    .flex-direction-row-reverse {flex-direction: row-reverse;}
+    .align-items-center {align-items: center;}
+
+    /* writing-mode */
+    .vertical-rl {writing-mode: vertical-rl;}
+    .vertical-lr {writing-mode: vertical-lr;}
+
+    /* font */
+    .font-size-1rem {font-size: 1rem;}
+    .font-size-2rem {font-size: 2rem;}
+    .font-size-10 {font-size: 10px;}
+    .font-size-14 {font-size: 14px;}
+    .font-size-16 {font-size: 16px;}
+    .font-size-18 {font-size: 18px;}
+    .font-size-20 {font-size: 20px;}
+    .font-size-24 {font-size: 24px;}
+    .font-size-36 {font-size: 36px;}
+    .font-size-48 {font-size: 48px;}
+    .font-size-200 {font-size: 200px;}
+
+    .font-weight-300 {font-weight: 300;}
+    .font-weight-500 {font-weight: 500;}
+    .font-weight-700 {font-weight: 700;}
+
+    .line-height-13 {line-height: 1.3;}
+
+    /*font-color */
+    .color-333 {color: #333;}
+    .color-444 {color: #444;}
+    .color-48 {color: #484848;}
+    .color-4d {color: #4d4d4d;}
+    .color-76 {color: #767676;}
+    .color-96 {color: #969696;}
+    .color-999 {color:#999;}
+    .color-fff {color: #ffffff;}
+
+    /* others */
+    .text-align-center {text-align: center;}
+    .text-align-left {text-align: left;}
+    .text-align-right {text-align: right;}
+    .text-align-justify {text-align: justify;}
+    .text-indent-9999 {text-indent: -9999em;}
+    .z-index-down1 {z-index: -1;}
+
+    /* resetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetresetreset */
+
+
+  * { margin: 0; padding: 0;}
+  body { 
+    width: 100vw;
+    height: 100vh;
+    background-color: #999;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+  }
+  .main-wrap {
+    width: 40vw;
+    height: 45vh;
+  }
+  .main-wrap .main-left {
+    width: calc(40vw / 3);
+    margin-right: 2vw;
+  }
+  .main-wrap .main-right {
+    width: calc(80vw / 3);
+    padding-left: 3vw;
+    border-left: 3px solid #fff;
+  }
+  .main-wrap .main-right h1 {
+    color: #333;
+  }
+  .hidden {
+    left:50%;
+    top: 20vh;
+    z-index: -1;
+  }
+  </style>
+</head>
+<body id="bg" class="display-f justify-center align-items-center">
+  <div class="main-wrap display-f align-items-center">
+    <div class="main-left">
+      <p class="text-left color-444 font-size-1rem">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Reiciendis aperiam atque deserunt iure error eaque molestiae aliquam minima animi, 
+        similique suscipit, nemo sequi consequuntur? Iste ullam quam dolorum aut porro?</p>
+    </div>
+    <div id="h1-container" class="main-right font-size-2rem">
+      <h1 id="clicker">I AM</h1>
+      <h1>A</h1>
+      <h1>TIGER</h1>
+      <h1>WITH WINGS</h1>
+    </div>
+  </div>
+  <div class="hidden font-size-2rem color-999 position-absolute translateX-50">
+    <h2>ACTUALLY I CAN'T FLY IN THE SKY</h1>
+  </div>
+
+
+  <script>
+    const h1Element = document.getElementsByTagName('h1');
+    const h1Container = document.querySelector('#h1-container');
+    const bg = document.querySelector('#bg');
+
+    // check point 1 
+    /*
+    
+    변수 이름은 어느정도 '이름만보아도' 알아챌 수 있는 작성이 필요합니다.
+    value -> darkgrayColor 등등 각자 나름의 방식으로 사용하는 것을 권장합니다.
+    
+    */
+
+
+
+    // let value = 51 ;    //rgb(51,51,51)= #333 
+    // let value2 = 153 ;  //rgb(153,153,153)= #999
+
+    // check point : 2
+    let darkgrayColor = 51 ; //rgb(51,51,51)= #333 
+    let lightgrayColor = 153; //rgb(153,153,153)= #999
+
+
+
+    h1Container.addEventListener('click', function() {
+      darkgrayColor = darkgrayColor + 10;
+      lightgrayColor = lightgrayColor + 10;
+
+      /* 
+      문자열 템플릿 방식 (ES6 최신버전)
+      "data" + "data" + "data" <-- ES5 버전
+      자바스크립트의 변수를 문자열로 사용하고 싶을때 이전버전에서는 위와 같은 방식으로 문자열을 합치는 방식으로
+      뜯어서 작성해야만 했습니다. (현재도 동일하게 적용됩니다)
+      이 방식이 불편하다는 사용자의 의견을 받아들여 최신버전에서는
+      문자열템플릿(string template) 문법을 도입했습니다.
+      ``<-- 백틱이라고 부르는 키보드 숫자 1번 옆에 있는 물결 부분에 있는 표시 입니다.
+      이것을 사용하면 문자열 작성법과 동일하게 사용할 수 있으면서,
+      ${넣고싶은변수} <-- 규칙 작성으로 덧셈표시와 같은 비직관적인 부분을 해결할 수 있습니다.
+      */
+
+      let setDarkgrayColor = `rgb(${darkgrayColor},${darkgrayColor},${darkgrayColor})`;
+      let setLightgrayColor = `rgb(${lightgrayColor},${lightgrayColor},${lightgrayColor})`;
+
+      // let rgb = "rgb(" + darkgrayColor+","+darkgrayColor+","+darkgrayColor+")";
+      // let rgb2 = "rgb(" + lightgrayColor+","+lightgrayColor+","+lightgrayColor+")";
+
+      for(let i = 0; i < h1Element.length; i++) {
+        h1Element[i].style.color = setDarkgrayColor;
+        bg.style.backgroundColor = setLightgrayColor;
+      }
+    });  
+
+
+
+  </script>
+</body>
+
+</html> 
